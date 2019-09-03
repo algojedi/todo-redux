@@ -1,6 +1,7 @@
+import Redux from "redux";
 import { TOGGLE_TODO, DELETE_TODO, ADD_TODO } from "../actions/actions";
 
-INITIAL_STATE = { todos: []}
+INITIAL_STATE = []
 
 mainReducer(state=INITIAL_STATE, action) {
     switch (action.type) {
@@ -20,4 +21,3 @@ mainReducer(state=INITIAL_STATE, action) {
     }
 }
 
-const store = Redux.createStore(mainReducer);
