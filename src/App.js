@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import Entry from './components/input/entry.component';
+import Header from './components/header/header.component';
 
 
 function App() {
   return (
     <div className="App">
       <h1>Todo List</h1>
-      <Entry/>
+      <Header/>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
-import './entry.css';
+import './header.css';
 
-const Entry = () => {
+const Header = () => {
     return ( 
         
         <div>
@@ -11,4 +11,4 @@ const Entry = () => {
      );
 }
  
-export default Entry;
+export default Header;
