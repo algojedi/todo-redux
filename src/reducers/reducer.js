@@ -1,20 +1,23 @@
-import Redux from "redux";
 import { TOGGLE_TODO, DELETE_TODO, ADD_TODO } from "../actions/actions";
 
-INITIAL_STATE = [{}];
 
-mainReducer(state=INITIAL_STATE, action) {
+const INITIAL_STATE = [{}];
+
+function mainReducer(state=INITIAL_STATE, action) {
+    console.log('main reducer called : ' + action.type);
+    
     switch (action.type) {
         case ADD_TODO:
+            console.log('add-todo reducer called');
             return [...state, { todo: action.todo, completed: false, key : action.index }];
             
         case DELETE_TODO:
-            return state.filter(todo => {todo.key != action.index})
+            return state.filter(todo => todo.key !== action.index)
             
         case TOGGLE_TODO:
+            let completed = true;
             const newState = state.map(el => { 
-                const completed;
-                if (el.key == action.index) {
+                if (el.key === action.index) {
                     completed = !el.completed; 
                     } else { completed = el.completed; }
 
@@ -30,3 +33,4 @@ mainReducer(state=INITIAL_STATE, action) {
     }
 }
 
+export default mainReducer;
