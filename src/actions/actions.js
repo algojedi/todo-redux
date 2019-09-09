@@ -7,7 +7,7 @@ let id = 0;
 
 //action creators returning actions
 export function addTodo(todo) {
-    console.log('added todo: ' + todo);
+    //console.log('added todo: ' + todo);
     return {
         type: ADD_TODO,
         index: id++,
@@ -16,6 +16,8 @@ export function addTodo(todo) {
 }
 
 export function deleteTodo(i) {
+    console.log('deleted todo at ind: ' + i);
+
     return {
         type: DELETE_TODO,
         index: i

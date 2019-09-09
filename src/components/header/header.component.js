@@ -2,6 +2,10 @@ import React from 'react';
 import './header.css';
 import { addTodo } from "../../actions/actions";
 import { connect } from 'react-redux';
+import { Button } from 'reactstrap';
+import { Input } from 'reactstrap';
+
+
 
 class Header extends React.Component {
     constructor(props) {
@@ -25,8 +29,11 @@ class Header extends React.Component {
     render() { 
         return ( 
             <div>
-                <input type='text' value={this.state.input} onChange={this.handleChange} placeholder='enter here' />
-                <button type='submit' onClick={this.handleClick} >submit</button>
+                <h1 className='title'>Todo List</h1>
+                <div className="col-4 header">
+                    <Input type='text' value={this.state.input} onChange={this.handleChange} placeholder='enter here' />
+                    <Button color='primary' onClick={this.handleClick} >Submit</Button>
+                </div>
             </div>
          );
     }

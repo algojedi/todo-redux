@@ -1,1 +1,6 @@
-ul { list-style: none; }
+ul { 
+    list-style: none; 
+    width: 400px;
+    margin: auto;
+    
+}

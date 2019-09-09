@@ -1,4 +1,9 @@
-input {
-    //height: 50px;
-    //width: 150px;
+.title {
+    margin-top: 50px;
+}
+.header {
+    width: 400px;
+    margin: auto;
+    display: flex;
+    margin-top: 25px;
 }

@@ -1,18 +1,18 @@
 import { TOGGLE_TODO, DELETE_TODO, ADD_TODO } from "../actions/actions";
 
 
-const INITIAL_STATE = [{}];
+const INITIAL_STATE = [];
 
 function mainReducer(state=INITIAL_STATE, action) {
     console.log('main reducer called : ' + action.type);
     
     switch (action.type) {
         case ADD_TODO:
-            console.log('add-todo reducer called');
-            return [...state, { todo: action.todo, completed: false, key : action.index }];
+            //console.log('add-todo reducer called');
+            return [...state, { todo: action.todo, completed: false, id : action.index }];
             
         case DELETE_TODO:
-            return state.filter(todo => todo.key !== action.index)
+            return state.filter(todo => todo.id !== action.index)
             
         case TOGGLE_TODO:
             let completed = true;
