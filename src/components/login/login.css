@@ -1,0 +1,19 @@
+#formWrapper {
+    width: 75%;
+    outline: dotted 2px blue;
+    height: 75vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    margin: auto;
+}
+
+#register {
+    margin-top: 20px;
+    display: block;
+} 
+
+#form {
+    width: 300px;
+}
