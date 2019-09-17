@@ -7,13 +7,16 @@ import mainReducer from './reducers/reducer';
 import {createStore} from 'redux'; 
 import { devToolsEnhancer } from 'redux-devtools-extension';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { BrowserRouter } from "react-router-dom";
 // const store = createStore(mainReducer);
 const store = createStore(mainReducer, devToolsEnhancer());
 
 ReactDOM.render(
 <Provider store={store}>
-        <App />
+        <BrowserRouter>
+                <App/>
+        </BrowserRouter>   
+        
 </Provider>
 
 

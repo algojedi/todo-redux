@@ -28,8 +28,8 @@ class Header extends React.Component {
     }
     render() { 
         return ( 
-            <div>
-                <h1 className='title'>Todo List</h1>
+            <div className='title'>
+                <h1>Todo List</h1>
                 <div className="col-4 header">
                     <Input type='text' value={this.state.input} onChange={this.handleChange} placeholder='enter here' />
                     <Button color='primary' onClick={this.handleClick} >Submit</Button>
