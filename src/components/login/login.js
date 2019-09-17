@@ -1,8 +1,9 @@
 import React from "react";
-//import { connect } from "react-redux";
-import { Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import './login.css';
-const Login = () => {
+import auth from '../auth';
+
+const Login = (props) => {
     return ( 
         <div id='formWrapper'>
             <h1>Sign in</h1>
@@ -16,8 +17,22 @@ const Login = () => {
                     <Label for="pswrd">Password</Label>
                     <Input type="password" name="password" id='pswrd' placeholder="password" />
                 </FormGroup>
-                <Button color='primary'>Sign in</Button>
-                <a href='#' id='register'>Register</a>
+                <Button color='primary' 
+                        id='signin-btn'
+                        onClick={() => {
+                                    auth.login(() => {
+                                        props.history.push("/todo-app");
+                                    })
+                                }}>
+                        Sign in
+                </Button>
+
+
+                <Button color='default' 
+                        id='reg-btn'
+                        onClick={() => { props.history.push("/register") }}>
+                        Register
+                </Button>
             </Form>
             
         </div>

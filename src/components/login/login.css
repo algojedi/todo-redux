@@ -1,6 +1,5 @@
 #formWrapper {
     width: 75%;
-    outline: dotted 2px blue;
     height: 75vh; 
     display: flex;
     flex-direction: column;

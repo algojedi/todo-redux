@@ -1,12 +1,9 @@
 import React from 'react';
 import './list.css';
 import { connect } from 'react-redux';
-import Todo from "../todo";
+import Todo from "../todo-app/todo";
 
 const List = ({ todos }) => {
-    console.log('in the list, heres the todos:');
-     console.log(todos);
-    
     
     return ( 
             <ul>
