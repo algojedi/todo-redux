@@ -2,12 +2,19 @@
 export const ADD_TODO = 'ADD_TODO'
 export const DELETE_TODO = 'DELETE_TODO'
 export const TOGGLE_TODO = 'TOGGLE_TODO'
+export const CLEAR_TODOS = 'CLEAR_TODOS'
 
 let id = 0;
 
 //action creators returning actions
+export function clearTodos() {
+    console.log('cleared todos');
+    return {
+        type: CLEAR_TODOS,
+    }
+} 
+
 export function addTodo(todo) {
-    //console.log('added todo: ' + todo);
     return {
         type: ADD_TODO,
         index: id++,

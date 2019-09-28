@@ -10,8 +10,6 @@ import ProtectedRoute from './components/protected-route'
 function App() {
   return (
     <div className="App">
-        {/* <Links/> */}
-        
       <Switch>
         <Route exact path='/' component={Login} />
         <ProtectedRoute exact path='/todo-app' component={TodoApp} />

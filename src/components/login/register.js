@@ -3,38 +3,87 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import './login.css';
 import auth from '../auth';
 
-const Register = (props) => {
-    return (
+class Register extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            email: '',
+            password: ''
+        }
+        //let failedToReg = false;
+        this.handleChange = this.handleChange.bind(this);
+        let failedAttempt = false;
+        
+    }
+    handleChange(e) {
+        this.setState({ [e.target.name]: e.target.value });
+        setTimeout(() => { }, 500);
+
+    } 
+    render() { 
+        return ( 
+
         <div id='formWrapper'>
             <h1>Register</h1>
             <hr />
             <Form id='form'>
                 <FormGroup>
                     <Label for="name">Name</Label>
-                    <Input type="text" name="name" id="name" placeholder="name" />
+                    <Input  type="text" 
+                            name="name" 
+                            onChange={this.handleChange}
+                            id="name"   
+                            placeholder="name" />
                 </FormGroup>
                 <FormGroup>
                     <Label for="email">Email</Label>
-                    <Input type="email" name="email" id="email" placeholder="email" />
+                    <Input  type="email" 
+                            name="email" 
+                            id="regEmail" 
+                            onChange={this.handleChange}
+                            placeholder="email" />
                 </FormGroup>
                 <FormGroup>
                     <Label for="pswrd">Password</Label>
-                    <Input type="password" name="password" id='pswrd' placeholder="password" />
+                    <Input  type="password" 
+                            name="password" 
+                            onChange={this.handleChange}
+                            id='regPassword' 
+                            placeholder="password" />
                 </FormGroup>
                 <Button color='primary'
                     onClick={() => {
-                        auth.login(() => {
-                            props.history.push("/todo-app");
-                        })
+                        auth.register(() => {
+                            this.props.history.push("/todo-app");
+                        }, this.state)
+
+                        setTimeout(() => {
+                            if (!auth.isAuthenticated()) {
+                                this.failedAttempt = true;
+                                this.setState({
+                                    email: '',
+                                    name: '',
+                                    password: ''
+                                });
+                            }
+                        }, 500);
+
                     }}>
-                
                     Register
                 </Button>
-                
+                <Button color='default'
+                    id='login-btn'
+                    onClick={() => { this.props.history.push("/") }}>
+                    Sign in
+                </Button>          
             </Form>
-
+                {this.failedAttempt &&
+                    <p style={{ color: 'red', margin: '10px' }}>That profile already exists</p>}
         </div>
-    );
+         );
+    }
 }
+ 
 
 export default Register;
