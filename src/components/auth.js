@@ -14,12 +14,15 @@ class Auth {
                 password: creds.password
             })
         })
-            .then(res => {
-                if (res.ok) {
-                    this.authenticated = true;
-                    cb();
-                }
-            })
+        .then(res => {
+            console.log('response from server: ');
+            console.log(res);
+            if (res.ok) {
+                this.authenticated = true;
+                cb();
+            }
+        })
+        .catch(res => console.log('err unable to authenticate'));
     }
 
     logout(cb) {
@@ -38,12 +41,14 @@ class Auth {
                 name: creds.name
             })
         })
-            .then(res => {
-                if (res.ok) {
-                    this.authenticated = true;
-                    cb();
-                }
-            })
+        .then(res => {
+            
+            if (res.ok) {
+                this.authenticated = true;
+                cb();
+            }
+        })
+        .catch(console.log);
     }
 
     isAuthenticated() {

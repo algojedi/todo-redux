@@ -4,8 +4,6 @@ import { TOGGLE_TODO, DELETE_TODO, ADD_TODO, CLEAR_TODOS } from "../actions/acti
 const INITIAL_STATE = [];
 
 function mainReducer(state=INITIAL_STATE, action) {
-    console.log('main reducer called : ' + action.type);
-    
     switch (action.type) {
         case CLEAR_TODOS:
             return INITIAL_STATE;

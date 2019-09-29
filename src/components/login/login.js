@@ -17,9 +17,6 @@ class Login extends React.Component {
 
     handleChange(e) {
         this.setState({ [e.target.name]: e.target.value});
-        setTimeout(() => {
-        }, 500);
-        
     } 
 
     render() { 
@@ -35,6 +32,7 @@ class Login extends React.Component {
                             name="email" 
                             id="loginEmail" 
                             placeholder="email"
+                            value={this.state.email}
                             onChange={this.handleChange} />
                 </FormGroup>
                 <FormGroup>
@@ -42,6 +40,7 @@ class Login extends React.Component {
                     <Input  type="password" 
                             name="password" 
                             id='loginPassword' 
+                            value={this.state.password}
                             placeholder="password"
                             onChange={this.handleChange} />
                 </FormGroup>
@@ -60,8 +59,10 @@ class Login extends React.Component {
                                                 email: '',
                                                 password: ''
                                             });
-                                          }
-                                    }, 1000);
+                                        } else {
+                                            this.failedAttempt = false;
+                                        }
+                                    }, 500);
                                     
                                 }}>
                         Sign in

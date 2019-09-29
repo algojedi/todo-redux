@@ -18,8 +18,6 @@ class Register extends React.Component {
     }
     handleChange(e) {
         this.setState({ [e.target.name]: e.target.value });
-        setTimeout(() => { }, 500);
-
     } 
     render() { 
         return ( 
@@ -34,12 +32,14 @@ class Register extends React.Component {
                             name="name" 
                             onChange={this.handleChange}
                             id="name"   
+                            value={this.state.name}
                             placeholder="name" />
                 </FormGroup>
                 <FormGroup>
                     <Label for="email">Email</Label>
                     <Input  type="email" 
                             name="email" 
+                            value={this.state.email}
                             id="regEmail" 
                             onChange={this.handleChange}
                             placeholder="email" />
@@ -50,6 +50,7 @@ class Register extends React.Component {
                             name="password" 
                             onChange={this.handleChange}
                             id='regPassword' 
+                            value={this.state.password}
                             placeholder="password" />
                 </FormGroup>
                 <Button color='primary'
@@ -66,6 +67,8 @@ class Register extends React.Component {
                                     name: '',
                                     password: ''
                                 });
+                            } else { 
+                                this.failedAttempt = false;
                             }
                         }, 500);
 

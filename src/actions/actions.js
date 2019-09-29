@@ -8,7 +8,6 @@ let id = 0;
 
 //action creators returning actions
 export function clearTodos() {
-    console.log('cleared todos');
     return {
         type: CLEAR_TODOS,
     }
