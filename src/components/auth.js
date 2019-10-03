@@ -1,12 +1,11 @@
-//import { Http2SecureServer } from "http2";
-
 class Auth {
     constructor() {
         this.authenticated = false;
     }
 
     login(cb, creds) {
-        fetch('http://localhost:3001/', {
+        // fetch('http://localhost:3001/', {
+        fetch('https://fierce-eyrie-43107.herokuapp.com/', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -32,7 +31,8 @@ class Auth {
 
     register(cb, creds) {
         //push credentials into database
-        fetch('http://localhost:3001/register', {
+        fetch('https://fierce-eyrie-43107.herokuapp.com/register', {
+        // fetch('http://localhost:3001/register', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
