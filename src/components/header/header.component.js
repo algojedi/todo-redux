@@ -29,9 +29,16 @@ class Header extends React.Component {
         return ( 
             <div className='title'>
                 <h1>Todo List</h1>
-                <div className="col-4 header">
-                    <Input type='text' value={this.state.input} onChange={this.handleChange} placeholder='enter here' />
-                    <Button color='primary' onClick={this.handleClick} >Submit</Button>
+                <div className="header">
+                    <Input  className='todo-item'
+                            type='text' 
+                            value={this.state.input} 
+                            onChange={this.handleChange} 
+                            placeholder='enter here' />
+                    <Button className='todo-item'
+                            color='primary' 
+                            onClick={this.handleClick} >Submit
+                    </Button>
                 </div>
             </div>
          );

@@ -7,3 +7,7 @@
     display: flex;
     margin-top: 25px;
 }
+
+.todo-item {
+    margin: 5px;
+}

@@ -6,11 +6,11 @@ import Todo from "../todo-app/todo";
 const List = ({ todos }) => {
     
     return ( 
-            <ul>
+            <div id='wrapper'>
                 {   todos.map(todo => (           
                     <Todo key={todo.id} {...todo}/>
                 ))}
-            </ul>
+            </div>
         
         
     );

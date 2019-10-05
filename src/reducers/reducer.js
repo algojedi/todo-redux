@@ -14,16 +14,16 @@ function mainReducer(state=INITIAL_STATE, action) {
         case DELETE_TODO:
             return state.filter(todo => todo.id !== action.index)
             
-        case TOGGLE_TODO:
-            let completed = true;
+        case TOGGLE_TODO:  
+            let completed;
             const newState = state.map(el => { 
-                if (el.key === action.index) {
+                if (el.id === action.index) {
                     completed = !el.completed; 
                     } else { completed = el.completed; }
 
                 return {    todo: el.todo,
                             completed, 
-                            key : el.key
+                            id : el.id
                         }
                 });
             return newState;    
