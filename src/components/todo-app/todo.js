@@ -7,7 +7,7 @@ import './todo.css';
 const Todo = ({ todo, dispatch, id }) => {
     if (todo == null) { return null };
     return ( 
-        <li className='item'> {todo} <span><Button onClick={() => dispatch(deleteTodo(id))} color='danger' className='delete'>&#10008;</Button></span></li> );
+        <li className='item'> {todo} <Button onClick={() => dispatch(deleteTodo(id))} color='danger' className='delete'>&#10008;</Button></li> );
 }
  
 

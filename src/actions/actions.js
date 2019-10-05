@@ -22,8 +22,6 @@ export function addTodo(todo) {
 }
 
 export function deleteTodo(i) {
-    console.log('deleted todo at ind: ' + i);
-
     return {
         type: DELETE_TODO,
         index: i

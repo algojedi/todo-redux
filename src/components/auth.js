@@ -4,7 +4,6 @@ class Auth {
     }
 
     login(cb, creds) {
-        // fetch('http://localhost:3001/', {
         fetch('https://fierce-eyrie-43107.herokuapp.com/', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
@@ -14,8 +13,6 @@ class Auth {
             })
         })
         .then(res => {
-            console.log('response from server: ');
-            console.log(res);
             if (res.ok) {
                 this.authenticated = true;
                 cb();
@@ -32,7 +29,6 @@ class Auth {
     register(cb, creds) {
         //push credentials into database
         fetch('https://fierce-eyrie-43107.herokuapp.com/register', {
-        // fetch('http://localhost:3001/register', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

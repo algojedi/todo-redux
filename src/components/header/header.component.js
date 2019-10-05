@@ -16,7 +16,6 @@ class Header extends React.Component {
     
     handleClick = e => {
         e.preventDefault();
-        console.log(this.props);
         this.props.dispatch(addTodo(this.state.input));
         this.setState({ input: '' });
         
